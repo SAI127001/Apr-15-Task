@@ -48,7 +48,7 @@ pipeline {
             echo "Nginx container is running on port 80!"
         }
         failure {
-            echo "Pipeline failed!"
+            echo "Pipeline failed!!"
         }
     }
 }
