@@ -34,13 +34,6 @@ pipeline {
             }
         }
 
-        stage('Run Nginx Container in Background') {
-            steps {
-                script {
-                    sh "docker run -d --name nginx-server -p 80:80 ${IMAGE_NAME}:${IMAGE_TAG}"
-                }
-            }
-        }
     }
 
     post {
