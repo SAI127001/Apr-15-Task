@@ -3,9 +3,8 @@ pipeline {
 
     environment {
         DOCKER_HUB_USER = 'sai127001'
-        DOCKER_HUB_REPO = 'mock-repo'
         DOCKERHUB_CREDENTIALS = credentials('docker-hub-creds') // Jenkins stored credentials
-        IMAGE_NAME = 'sai127001/nginx-app'  // Update with your Docker Hub repo
+        IMAGE_NAME = 'mock-app'  // Update with your Docker Hub repo
         IMAGE_TAG = 'latest'
     }
 
@@ -31,7 +30,7 @@ pipeline {
                         echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USER --password-stdin
                     '''
                 }
-                sh "docker push ${DOCKER_HUB_USER}/${DOCKER_HUB_REPO}:${IMAGE_TAG}"
+                sh "docker push ${DOCKER_HUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
             }
         }
 
